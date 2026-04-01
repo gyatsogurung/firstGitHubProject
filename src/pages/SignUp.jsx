@@ -2,6 +2,7 @@ import { Form, Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../api/firebase";
 import { useActionData } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
 export function SignUp() {
   const actionData = useActionData();
@@ -51,48 +52,10 @@ export async function action({ request }) {
   const email = data.get("email");
   const password = data.get("password");
   try {
-    await createUserWithEmailAndPassword(auth, email, password);
+      await createUserWithEmailAndPassword(auth, email, password);
+      return redirect("/login");
   } catch (error) {
     return new Response(error.message, { status: 400 });
   }
+    
 }
-
-
-// import { Form, Link } from 'react-router-dom';
-// import { createUserWithEmailAndPassword } from 'firebase/auth';
-// import { auth } from '../api/firebase';
-// import { useActionData } from 'react-router-dom';
-
-// export function SignUp() {
-//     const actionData = useActionData();
-//     console.log(actionData)
-//     return (
-//         <Form method='post' action="/signup">
-//             {actionData && <p style={{ color: 'red' }}>{actionData}</p>}
-//             <div>
-//                 <label htmlFor="email">Email</label> <input id="email" name="email" type="email"></input>
-//             </div>
-//             <div>
-//                 <label htmlFor="password">Password</label>
-//                 <input id="password" name="password" type="password"></input>
-//             </div>
-//             <div>
-//                 <label htmlFor="confirmpassword">Confirm Password</label>
-//                 <input id="confirmpassword" name="confirmpassword" type="password"></input>
-//             </div>
-//             <p>
-//                 <button type="submit">SignUp</button>
-//                 <Link to="/login">LogIn</Link>
-//             </p> </Form>)
-// }
-
-// export async function action({ request }) {
-//     const data = await request.formData();
-//     const email = data.get('email');
-//     const password = data.get('password');
-//     try {
-        
-//         await createUserWithEmailAndPassword(auth, email, password);
-     
-//     }catch (error) { return new Response(error.message, { status: 400 }) }
-//     };
