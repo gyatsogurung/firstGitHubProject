@@ -109,76 +109,7 @@ function FormFn() {
 
 export default FormFn;
 
-// import { useContext } from 'react';
-// import { DataContext } from '../api/component/workout-data-context';
-// import { useWorkoutForm } from './useWorkoutForm';
 
-// function FormFn() {
-
-//   const { rowOnChangeHandler, mainrowOnChangehandler, addWorkout, addRow, handleSubmit } = useWorkoutForm();
-//   const { workoutState, errorState } = useContext(DataContext);
-
-//   return (
-//     <form>
-//       <div>
-//         {workoutState.map((mainRow, index) => {
-//           return (
-//             <div>
-//               <textarea
-//                 id={mainRow}
-//                 type="text"
-//                 name="workoutName"
-//                 value={!workoutState[index].workoutName ||
-//                   errorState.error === "adding error" ? '' : workoutState[index].workoutName}
-//                 placeholder="Workout name"
-//                 onChange={(e) => { mainrowOnChangehandler(e, index); }}
-//                 required />
-//               {mainRow.lifts.map((item, rowOnchangeindex) => {
-//                 return (
-//                   <p>
-//                     <input
-//                       id={rowOnchangeindex}
-//                       type="text"
-//                       placeholder="lift"
-//                       name="liftname"
-//                       value={!workoutState[index].lifts[rowOnchangeindex].name ||
-//                         errorState.error === "adding error" ? '' : workoutState[index].lifts[rowOnchangeindex].name}
-//                       onChange={(e) => { rowOnChangeHandler(e, index, rowOnchangeindex, 'name'); }} >
-//                     </input>
-//                     <input
-//                       id={rowOnchangeindex}
-//                       type="number"
-//                       placeholder="sets"
-//                       name="liftset"
-//                       value={!workoutState[index].lifts[rowOnchangeindex].sets ||
-//                         errorState.error === "adding error" ? '' : workoutState[index].lifts[rowOnchangeindex].sets}
-//                       onChange={(e) => { rowOnChangeHandler(e, index, rowOnchangeindex, 'set'); }}>
-//                     </input>
-//                   </p>
-//                 );
-//               })}
-//               <button
-//                 type="button"
-//                 onClick={() => { addRow(index); }}>
-//                 add lifts
-//               </button>
-//             </div>
-//           );
-//         })}
-//       </div>
-//       <button
-//         type="submit"
-//         onClick={(event) => { handleSubmit(event); }}>
-//         Submit
-//       </button>
-//       <button type="button" onClick={addWorkout}>
-//         add workout
-//       </button>
-//     </form>
-//   );
-// }
-
-// export default FormFn;
 
 
 

@@ -1,8 +1,7 @@
 import { redirect } from "react-router-dom";
 import { auth, db } from "../api/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
-// import { DataContext } from "../api/component/workout-data-context";
-// import { useContext } from "react";
+
 
 
 

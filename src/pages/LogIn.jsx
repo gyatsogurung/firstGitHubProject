@@ -45,40 +45,5 @@ export async function action({ request }) {
   return redirect("/dashboard");
 }
 
-// import { Form, Link, redirect } from "react-router-dom";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "../api/firebase";
 
-// export function LogIn() {
-//     return (
-//         <Form method="post" action="/login">
-//             <div>
-//                 <label htmlFor="email">Email</label>
-//                 <input id="email" name="email" type="email"
-//                 ></input>
-//             </div>
-//             <div>
-//                 <label htmlFor="password">Password</label>
-//                 <input id="password" name="password" type="password"></input>
-//             </div>
-
-//             <p>
-//                 <button type="submit">LogIn</button>
-//                 <Link to="/signup">SignUp</Link>
-//             </p>
-//         </Form>
-//     )
-// }
-
-// export async function action({ request }) {
-//     const data = await request.formData();
-//     const email = data.get('email');
-//     const password = data.get('password');
-   
-    
-//     const userCredential = await signInWithEmailAndPassword(auth, email, password);
-//    userCredential.user;
-   
-//    return redirect('/dashboard');
-// };
 
